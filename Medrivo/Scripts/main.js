@@ -286,12 +286,59 @@
         })
     });
 
-    const swiper = new Swiper(".swiper-head", {
-        loop: true,
-        slidesPerView: "auto",
-        pagination: {
-            
-            dynamicBullets: true,
+    // HERO SLIDER
+    
+
+    
+
+    function wait(ms) {
+        var start = new Date().getTime();
+        var end = start;
+        while (end < start + ms) {
+            end = new Date().getTime();
         }
-    })
+    }
+    console.log('before');
+    wait(7000);  //7 seconds in milliseconds
+    
+    console.log('after');
+
+
+    var menu = [];
+    jQuery('.swiper-slide').each(function (index) {
+        menu.push(jQuery(this).find('.slide-inner').attr("data-text"))
+    });
+    var interleaveOffset = 0.5;
+    var swiperOptions = {
+        loop: true,
+        speed: 1000,
+        parallax: true,
+        //autoplay: {
+        //    delay: 6500,
+        //    disableOnInteraction: false,
+        //},
+        watchSlidesProgress: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    };
+
+    var swiper = new Swiper(".swiper-container", swiperOptions);
+
+    // DATA BACKGROUND IMAGE
+    var sliderBgSetting = $(".slide-bg-image");
+    sliderBgSetting.each(function (indx) {
+        if ($(this).attr("data-background")) {
+            $(this).css("background-image", "url(" + $(this).data("background") + ")");
+        }
+    });
+
+    
+    
 })()

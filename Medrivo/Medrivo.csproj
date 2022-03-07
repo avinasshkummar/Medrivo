@@ -173,6 +173,7 @@
     <Content Include="Content\glightbox\glightbox.min.css" />
     <Content Include="Content\img\about-img.jpg" />
     <Content Include="Content\img\apple-touch-icon.png" />
+    <Content Include="Content\img\Bean Eater-1s-200px.svg" />
     <Content Include="Content\img\blog\blog-1.jpg" />
     <Content Include="Content\img\blog\blog-2.jpg" />
     <Content Include="Content\img\blog\blog-3.jpg" />
@@ -198,9 +199,15 @@
     <Content Include="Content\img\clients\client-6.png" />
     <Content Include="Content\img\clients\client-7.png" />
     <Content Include="Content\img\clients\client-8.png" />
+    <Content Include="Content\img\Head logo.svg" />
     <Content Include="Content\img\favicon.png" />
-    <Content Include="Content\img\hero-bg.jpg" />
+    <Content Include="Content\img\head-bg\head-bg1.jpg" />
+    <Content Include="Content\img\head-bg\head-bg2.jpg" />
+    <Content Include="Content\img\head-bg\head-bg3.jpg" />
+    <Content Include="Content\img\head-bg\head-bg4.jpg" />
+    <Content Include="Content\img\loader.gif" />
     <Content Include="Content\img\logo.png" />
+    <Content Include="Content\img\logo.svg" />
     <Content Include="Content\img\portfolio\portfolio-1.jpg" />
     <Content Include="Content\img\portfolio\portfolio-2.jpg" />
     <Content Include="Content\img\portfolio\portfolio-3.jpg" />

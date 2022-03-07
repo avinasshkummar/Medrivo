@@ -286,4 +286,12 @@
         })
     });
 
+    const swiper = new Swiper(".swiper-head", {
+        loop: true,
+        slidesPerView: "auto",
+        pagination: {
+            
+            dynamicBullets: true,
+        }
+    })
 })()

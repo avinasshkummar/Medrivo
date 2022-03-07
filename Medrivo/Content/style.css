@@ -336,7 +336,7 @@ h1, h2, h3, h4, h5, h6 {
 #hero {
   width: 100%;
   height: 60vh;
-  background: url("../Content/img/hero-bg.jpg") center center;
+  /*background: url("../Content/img/hero-bg.jpg") center center;*/
   background-size: cover;
   position: relative;
   z-index: 1;
@@ -425,6 +425,19 @@ h1, h2, h3, h4, h5, h6 {
     height: 120vh;
   }
 }
+#hero > .swiper-head {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+   .swiper-head .swiper-head-slide {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 
 /*--------------------------------------------------------------
 # Sections General

@@ -48,18 +48,6 @@
     <Reference Include="AdvancedStringBuilder, Version=0.1.0.0, Culture=neutral, PublicKeyToken=e818a2fc08933ddb, processorArchitecture=MSIL">
       <HintPath>..\packages\AdvancedStringBuilder.0.1.0\lib\net45\AdvancedStringBuilder.dll</HintPath>
     </Reference>
-    <Reference Include="AutoprefixerHost, Version=3.0.17.0, Culture=neutral, PublicKeyToken=35c9a5d231b2f02d, processorArchitecture=MSIL">
-      <HintPath>..\packages\AutoprefixerHost.3.0.17\lib\net45\AutoprefixerHost.dll</HintPath>
-    </Reference>
-    <Reference Include="BundleTransformer.Autoprefixer, Version=1.12.46.0, Culture=neutral, PublicKeyToken=973c344c93aac60d, processorArchitecture=MSIL">
-      <HintPath>..\packages\BundleTransformer.Autoprefixer.1.12.46\lib\net40\BundleTransformer.Autoprefixer.dll</HintPath>
-    </Reference>
-    <Reference Include="BundleTransformer.CleanCss, Version=1.12.44.0, Culture=neutral, PublicKeyToken=973c344c93aac60d, processorArchitecture=MSIL">
-      <HintPath>..\packages\BundleTransformer.CleanCss.1.12.44\lib\net40\BundleTransformer.CleanCss.dll</HintPath>
-    </Reference>
-    <Reference Include="BundleTransformer.Core, Version=1.10.0.0, Culture=neutral, PublicKeyToken=973c344c93aac60d, processorArchitecture=MSIL">
-      <HintPath>..\packages\BundleTransformer.Core.1.10.0\lib\net40\BundleTransformer.Core.dll</HintPath>
-    </Reference>
     <Reference Include="JavaScriptEngineSwitcher.Core, Version=3.1.0.0, Culture=neutral, PublicKeyToken=c608b2a8cc9e4472, processorArchitecture=MSIL">
       <HintPath>..\packages\JavaScriptEngineSwitcher.Core.3.1.0\lib\net45\JavaScriptEngineSwitcher.Core.dll</HintPath>
     </Reference>
@@ -174,31 +162,6 @@
     <Content Include="Content\img\about-img.jpg" />
     <Content Include="Content\img\apple-touch-icon.png" />
     <Content Include="Content\img\Bean Eater-1s-200px.svg" />
-    <Content Include="Content\img\blog\blog-1.jpg" />
-    <Content Include="Content\img\blog\blog-2.jpg" />
-    <Content Include="Content\img\blog\blog-3.jpg" />
-    <Content Include="Content\img\blog\blog-4.jpg" />
-    <Content Include="Content\img\blog\blog-author.jpg" />
-    <Content Include="Content\img\blog\blog-inside-post.jpg" />
-    <Content Include="Content\img\blog\blog-recent-1.jpg" />
-    <Content Include="Content\img\blog\blog-recent-2.jpg" />
-    <Content Include="Content\img\blog\blog-recent-3.jpg" />
-    <Content Include="Content\img\blog\blog-recent-4.jpg" />
-    <Content Include="Content\img\blog\blog-recent-5.jpg" />
-    <Content Include="Content\img\blog\comments-1.jpg" />
-    <Content Include="Content\img\blog\comments-2.jpg" />
-    <Content Include="Content\img\blog\comments-3.jpg" />
-    <Content Include="Content\img\blog\comments-4.jpg" />
-    <Content Include="Content\img\blog\comments-5.jpg" />
-    <Content Include="Content\img\blog\comments-6.jpg" />
-    <Content Include="Content\img\clients\client-1.png" />
-    <Content Include="Content\img\clients\client-2.png" />
-    <Content Include="Content\img\clients\client-3.png" />
-    <Content Include="Content\img\clients\client-4.png" />
-    <Content Include="Content\img\clients\client-5.png" />
-    <Content Include="Content\img\clients\client-6.png" />
-    <Content Include="Content\img\clients\client-7.png" />
-    <Content Include="Content\img\clients\client-8.png" />
     <Content Include="Content\img\Head logo.svg" />
     <Content Include="Content\img\favicon.png" />
     <Content Include="Content\img\head-bg\head-bg1.jpg" />
@@ -208,18 +171,6 @@
     <Content Include="Content\img\loader.gif" />
     <Content Include="Content\img\logo.png" />
     <Content Include="Content\img\logo.svg" />
-    <Content Include="Content\img\portfolio\portfolio-1.jpg" />
-    <Content Include="Content\img\portfolio\portfolio-2.jpg" />
-    <Content Include="Content\img\portfolio\portfolio-3.jpg" />
-    <Content Include="Content\img\portfolio\portfolio-4.jpg" />
-    <Content Include="Content\img\portfolio\portfolio-5.jpg" />
-    <Content Include="Content\img\portfolio\portfolio-6.jpg" />
-    <Content Include="Content\img\portfolio\portfolio-7.jpg" />
-    <Content Include="Content\img\portfolio\portfolio-8.jpg" />
-    <Content Include="Content\img\portfolio\portfolio-9.jpg" />
-    <Content Include="Content\img\portfolio\portfolio-details-1.jpg" />
-    <Content Include="Content\img\portfolio\portfolio-details-2.jpg" />
-    <Content Include="Content\img\portfolio\portfolio-details-3.jpg" />
     <Content Include="Content\img\Product Branding\10.png" />
     <Content Include="Content\img\Product Branding\11.png" />
     <Content Include="Content\img\Product Branding\12.png" />
@@ -230,23 +181,11 @@
     <Content Include="Content\img\Product Branding\7.png" />
     <Content Include="Content\img\Product Branding\8.png" />
     <Content Include="Content\img\Product Branding\9.png" />
-    <Content Include="Content\img\team\team-1.jpg" />
-    <Content Include="Content\img\team\team-2.jpg" />
-    <Content Include="Content\img\team\team-3.jpg" />
-    <Content Include="Content\img\team\team-4.jpg" />
     <Content Include="Content\img\testimonials-bg.jpg" />
-    <Content Include="Content\img\testimonials\testimonials-1.jpg" />
-    <Content Include="Content\img\testimonials\testimonials-2.jpg" />
-    <Content Include="Content\img\testimonials\testimonials-3.jpg" />
-    <Content Include="Content\img\testimonials\testimonials-4.jpg" />
-    <Content Include="Content\img\testimonials\testimonials-5.jpg" />
-    <Content Include="Content\img\values-1.jpg" />
-    <Content Include="Content\img\values-2.jpg" />
-    <Content Include="Content\img\values-3.jpg" />
-    <Content Include="Content\img\values-4.jpg" />
     <Content Include="Content\style.css" />
     <Content Include="Content\swiper\swiper-bundle.min.css" />
     <Content Include="favicon.ico" />
+    <Content Include="favicon.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\aos\aos.js" />
@@ -298,6 +237,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\img\blog\" />
+    <Folder Include="Content\img\clients\" />
+    <Folder Include="Content\img\portfolio\" />
+    <Folder Include="Content\img\team\" />
+    <Folder Include="Content\img\testimonials\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

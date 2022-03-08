@@ -291,17 +291,16 @@
 
     
 
-    function wait(ms) {
-        var start = new Date().getTime();
-        var end = start;
-        while (end < start + ms) {
-            end = new Date().getTime();
-        }
-    }
-    console.log('before');
-    wait(7000);  //7 seconds in milliseconds
-    
-    console.log('after');
+    //function wait(ms) {
+    //    var start = new Date().getTime();
+    //    var end = start;
+    //    while (end < start + ms) {
+    //        end = new Date().getTime();
+    //    }
+    //}
+    //console.log('before');
+    //wait(1000);  //1 seconds in milliseconds
+    //console.log('after');
 
 
     var menu = [];
@@ -313,10 +312,10 @@
         loop: true,
         speed: 1000,
         parallax: true,
-        //autoplay: {
-        //    delay: 6500,
-        //    disableOnInteraction: false,
-        //},
+        autoplay: {
+            delay: 6000,
+            disableOnInteraction: false,
+        },
         watchSlidesProgress: true,
         pagination: {
             el: '.swiper-pagination',
@@ -337,8 +336,5 @@
         if ($(this).attr("data-background")) {
             $(this).css("background-image", "url(" + $(this).data("background") + ")");
         }
-    });
-
-    
-    
+    });    
 })()

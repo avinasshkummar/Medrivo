@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css'>
+    <link rel="shortcut icon" href="~/favicon.svg" type="image/svg+xml">
+    <meta property="og:image" content="">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1024">
+    <meta property="og:image:height" content="1024">
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/bundles/Content/css")
     @Styles.Render("~/bundles/Vendorcss")
@@ -32,9 +37,9 @@
         <div class="container d-flex align-items-center justify-content-between">
 
             <div class="logo">
-                <h1><a href="#"><img src="../Content/img/logo.svg" /> </a></h1>
+                @*<h1><a href="#"><img src="../Content/img/logo.svg" /> </a></h1>*@
                 <!-- Uncomment below if you prefer to use an image logo -->
-                <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+                 <a href="#"><img src="../Content/img/logo.svg"  alt="" class="img-fluid"></a>
             </div>
 
             <nav id="navbar" class="navbar">
@@ -81,7 +86,7 @@
                 <div class="row">
 
                     <div class="col-lg-3 col-md-6 footer-contact">
-                        <h3>Flexor</h3>
+                        <a href="#"><img src="../Content/img/logo.svg" alt="" class="img-fluid"></a>
                         <p>
                             148, Wd no: 2 <br>
                             Gemd layout, Hingna<br>
@@ -131,13 +136,7 @@
                 <div class="copyright">
                     &copy; Copyright <strong><span>Medrivo</span></strong>. All Rights Reserved
                 </div>
-                <!--<div class="credits">-->
-                <!-- All the links in the footer should remain intact. -->
-                <!-- You can delete the links only if you purchased the pro version. -->
-                <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/flexor-free-multipurpose-bootstrap-template/ -->
-                <!--Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-                </div>-->
+                
             </div>
             <div class="social-links text-center text-lg-right pt-3 pt-lg-0">
                 <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>

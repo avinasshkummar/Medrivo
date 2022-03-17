@@ -39,13 +39,13 @@ VALUES
 ------Product URL------------
 INSERT INTO [dbo].ProductImages (Id,ProductImagePath,ProductID)
 VALUES
-(1,'../Content/img/Product Branding/MOREGGS.png',1),
-(2,'../Content/img/Product Branding/GROW ME GOLD.png',2),
-(3,'../Content/img/Product Branding/YOLKCARE.png',3),
-(4,'../Content/img/Product Branding/VITAMED K.png',4 ),
-(5,'../Content/img/Product Branding/GUT ON.png',5 ),
-(6,'../Content/img/Product Branding/KOLIMED.png',6 ),
-(7,'../Content/img/Product Branding/HEPTAVITA.png',7 ),
-(8,'../Content/img/Product Branding/MEDIPHYT.png',8 ),
-(9,'../Content/img/Product Branding/TOXOKLEAN.png',9 ),
-(10,'../Content/img/Product Branding/BV - CIDE.png',10 )
+(1,'/Content/img/Product Branding/MOREGGS.png',1),
+(2,'/Content/img/Product Branding/GROW ME GOLD.png',2),
+(3,'/Content/img/Product Branding/YOLKCARE.png',3),
+(4,'/Content/img/Product Branding/VITAMED K.png',4 ),
+(5,'/Content/img/Product Branding/GUT ON.png',5 ),
+(6,'/Content/img/Product Branding/KOLIMED.png',6 ),
+(7,'/Content/img/Product Branding/HEPTAVITA.png',7 ),
+(8,'/Content/img/Product Branding/MEDIPHYT.png',8 ),
+(9,'/Content/img/Product Branding/TOXOKLEAN.png',9 ),
+(10,'/Content/img/Product Branding/BV - CIDE.png',10 )

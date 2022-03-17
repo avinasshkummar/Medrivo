@@ -11,7 +11,7 @@
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1024">
     <meta property="og:image:height" content="1024">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - Medrivo BioScience</title>
     @Styles.Render("~/bundles/Content/css")
     @Styles.Render("~/bundles/Vendorcss")
 
@@ -24,11 +24,11 @@
         <div class="container d-flex justify-content-center justify-content-md-between">
             <div class="contact-info d-flex align-items-center">
                 <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@medrivobioscience.com">contact@medrivobioscience.com</a></i>
-                <i class="bi bi-phone d-flex align-items-center ms-4"><a href="tel:+919608002775"><span>+91 96080 02775</span></a></i>
+                <i class="bi bi-phone d-flex align-items-center ms-4"><a href="tel:+919608002775"><span>9608002775</span></a></i>
             </div>
 
             <div class="cta d-none d-md-flex align-items-center">
-                <a href="#about" class="scrollto">Get Started</a>
+                <a href="/#about" class="scrollto">Get Started</a>
             </div>
         </div>
     </section>
@@ -38,14 +38,14 @@
         <div class="container d-flex align-items-center justify-content-between">
 
             <div class="logo">
-                @*<h1><a href="#"><img src="../Content/img/logo.svg" /> </a></h1>*@
-                <!-- Uncomment below if you prefer to use an image logo -->
-                <a href="/"><img src="../Content/img/logo.svg" alt="" class="img-fluid"></a>
+               
+                
+                <a href="/"><img src="/Content/img/logo.svg" alt="" class="img-fluid"></a>
             </div>
 
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a class="nav-link scrollto active" href="/">Home</a></li>
+                    <li><a class="nav-link scrollto" href="/#home">Home</a></li>
                     <li><a class="nav-link scrollto" href="/#about">About</a></li>
                     <li><a href="/Products">Products</a></li>
                     <li><a href="#">News</a></li>
@@ -69,7 +69,7 @@
                 <div class="row">
 
                     <div class="col-lg-3 col-md-6 footer-contact">
-                        <a href="/"><img src="../Content/img/logo.svg" alt="" class="img-fluid"></a>
+                        <a href="/"><img src="/Content/img/logo.svg" alt="" class="img-fluid"></a>
                         <p>
                             148, Wd no: 2 <br>
                             Gemd layout, Hingna<br>
@@ -80,28 +80,17 @@
                         </p>
                     </div>
 
-                    <div class="col-lg-2 col-md-6 footer-links">
+                    <div class="col-lg-3 col-md-6 footer-links">
                         <h4>Useful Links</h4>
                         <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Careers</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="/">Home</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="/#about">About us</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="/Products">Products</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="#">News</a></li>
                         </ul>
                     </div>
 
-                    <div class="col-lg-3 col-md-6 footer-links">
-                        <h4>Our Products</h4>
-                        <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Product 1</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Product 2</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Product 3</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Product 4</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Product 5</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 footer-newsletter">
+                    <div class="col-lg-5 col-md-6 footer-newsletter">
                         <h4>Join Our Newsletter</h4>
                         <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
                         <form action="" method="post">

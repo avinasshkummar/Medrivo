@@ -279,6 +279,7 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\swiper\swiper-bundle.min.js" />
     <Content Include="Scripts\validate.js" />
+    <Content Include="svg company logo.svg" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -292,7 +293,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
-    <Content Include="Views\Products\AntiToxin.cshtml" />
+    <Content Include="Views\Products\ProductDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

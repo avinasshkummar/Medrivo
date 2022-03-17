@@ -25,6 +25,7 @@ namespace Medrivo.Controllers
                     {
                         list.Add(new OurProduct()
                         {
+                            ProductID=inneritem.Id,
                             ProductName = inneritem.ProductName,
                             ImageURL = inneritem.ProductImagePath,
                             ProductDescription = inneritem.ProductDescription
@@ -32,6 +33,7 @@ namespace Medrivo.Controllers
                     }
                     products.Add(new Products()
                     {
+                        
                         ProductCategory = item.ProductCategory,
                         ProductCategoryDescription = item.ProductCategoryDescription,
                         products = list
@@ -41,19 +43,18 @@ namespace Medrivo.Controllers
             ViewBag.Products = products;
             return View();
         }
-        public ActionResult Nutrition()
+        public ActionResult ProductDetails()
         {
-            return View();
-        }
-        public ActionResult Supplement()
-        {
-            return View();
-        }
-        
-        public ActionResult AntiToxin()
-        {
-            var url = RouteData.Values;
-            
+            var productDeatil = new OurProduct();
+            var productID= Int32.Parse(Request.Url.Segments[3]);
+            using (var db = new MedrivoBioScienceEntities())
+            {
+                var x = db.Products.Join(db.ProductImages, p => p.Id, purl => purl.ProductID,
+                    (p, purl) => new { p.Id, ProductName = p.Name, purl.ProductImagePath, p.ProductTypeID, ProductDescription = p.Description }).Where(p=>p.Id== productID).FirstOrDefault();
+                productDeatil = new OurProduct() {ProductID=x.Id, ImageURL = x.ProductImagePath, ProductDescription = x.ProductDescription, ProductName = x.ProductName };
+            }
+            ViewBag.ProductDetail = productDeatil;
+
             return View();
         }
     }

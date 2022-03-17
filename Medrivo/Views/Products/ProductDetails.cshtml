@@ -1,0 +1,72 @@
+﻿@using Medrivo.Models;
+@{
+    ViewBag.Title = "ProductDetails";
+}
+
+
+<main id="main">
+    @{
+        var product = (OurProduct)ViewBag.ProductDetail;
+    }
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+        <div class="container">
+            <ol>
+                <li><a href="/">Home</a></li>
+                <li><a href="/products">Products</a></li>
+                <li>@product.ProductName</li>
+            </ol>
+            <h2>@product.ProductDescription</h2>
+        </div>
+    </section><!-- End Breadcrumbs -->
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+        <div class="container">
+
+            <div class="row gy-4">
+
+                <div class="col-lg-8">
+                    <div class="portfolio-details-slider swiper">
+                        <div class="swiper-wrapper align-items-center">
+
+                            <div class="swiper-slide">
+                                <img src="@product.ImageURL" alt="">
+                            </div>
+
+                            <div class="swiper-slide">
+                                <img src="@product.ImageURL" alt="">
+                            </div>
+
+                            <div class="swiper-slide">
+                                <img src="@product.ImageURL" alt="">
+                            </div>
+
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="portfolio-info">
+                        <h3>@product.ProductName</h3>
+                        <ul>
+                            <li><strong>Category</strong>: @product.ProductDescription</li>
+                            <li><strong>Producer</strong>: Medrivo</li>
+                            <li><strong>MFD date</strong>: 01 March, 2020</li>
+                        </ul>
+                    </div>
+                    <div class="portfolio-description">
+                        <h2>This is an example of portfolio detail</h2>
+                        <p>
+                            Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
+                        </p>
+                    </div>
+                    <div class="btn-wrap">
+                        <a target="_blank" href="http://www.africau.edu/images/default/sample.pdf" download="http://www.africau.edu/images/default/sample.pdf" class="btn-buy" value="Download PDF File">Brochure <i class="fa fa-download" aria-hidden="true"></i></a>
+                    </div>
+            </div>
+
+        </div>
+    </section><!-- End Portfolio Details Section -->
+
+</main><!-- End #main -->

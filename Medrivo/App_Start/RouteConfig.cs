@@ -12,7 +12,10 @@ namespace Medrivo
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-
+            routes.MapRoute(
+                  name:"Products",
+                  url: "Products/{action}/{productID}",
+                  defaults: new { controller = "Products", action = "Index", id = UrlParameter.Optional });
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

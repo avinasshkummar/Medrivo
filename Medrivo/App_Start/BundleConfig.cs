@@ -54,7 +54,7 @@ namespace Medrivo
 
             bundles.Add(new StyleBundle("~/bundles/Vendorcss").Include(
                 "~/Content/aos/aos.css",
-                "~/Content/glithbox/glithbox.min.css",
+                "~/Content/glightbox/glightbox.min.css",
                 "~/Content/fonts/bootstrap-icons-fonts/bootstrap-icons.css",
                 "~/Content/boxicons-css/boxicons.css",
                 "~/Content/swiper/swiper-bundle.min.css"

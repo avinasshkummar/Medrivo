@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using Medrivo.Models;
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -23,7 +24,7 @@
         <div class="container d-flex justify-content-center justify-content-md-between">
             <div class="contact-info d-flex align-items-center">
                 <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@medrivobioscience.com">contact@medrivobioscience.com</a></i>
-                <i class="bi bi-phone d-flex align-items-center ms-4"><span>+91 96080 02775</span></i>
+                <i class="bi bi-phone d-flex align-items-center ms-4"><a href="tel:+919608002775"><span>+91 96080 02775</span></a></i>
             </div>
 
             <div class="cta d-none d-md-flex align-items-center">
@@ -39,35 +40,17 @@
             <div class="logo">
                 @*<h1><a href="#"><img src="../Content/img/logo.svg" /> </a></h1>*@
                 <!-- Uncomment below if you prefer to use an image logo -->
-                 <a href="#"><img src="../Content/img/logo.svg"  alt="" class="img-fluid"></a>
+                <a href="/"><img src="../Content/img/logo.svg" alt="" class="img-fluid"></a>
             </div>
 
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-                    <li><a class="nav-link scrollto" href="#about">About</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li class="dropdown">
-                        <a href="#"><span>Products</span> <i class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            <li><a href="#">Drop Down 1</a></li>
-                            <li class="dropdown">
-                                <a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                                <ul>
-                                    <li><a href="#">Deep Drop Down 1</a></li>
-                                    <li><a href="#">Deep Drop Down 2</a></li>
-                                    <li><a href="#">Deep Drop Down 3</a></li>
-                                    <li><a href="#">Deep Drop Down 4</a></li>
-                                    <li><a href="#">Deep Drop Down 5</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Drop Down 2</a></li>
-                            <li><a href="#">Drop Down 3</a></li>
-                            <li><a href="#">Drop Down 4</a></li>
-                        </ul>
-                    </li>
+                    <li><a class="nav-link scrollto active" href="/">Home</a></li>
+                    <li><a class="nav-link scrollto" href="/#about">About</a></li>
+                    <li><a href="/Products">Products</a></li>
                     <li><a href="#">News</a></li>
-                    <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a class="nav-link scrollto" href="/#contact">Contact</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
@@ -86,7 +69,7 @@
                 <div class="row">
 
                     <div class="col-lg-3 col-md-6 footer-contact">
-                        <a href="#"><img src="../Content/img/logo.svg" alt="" class="img-fluid"></a>
+                        <a href="/"><img src="../Content/img/logo.svg" alt="" class="img-fluid"></a>
                         <p>
                             148, Wd no: 2 <br>
                             Gemd layout, Hingna<br>
@@ -136,7 +119,7 @@
                 <div class="copyright">
                     &copy; Copyright <strong><span>Medrivo</span></strong>. All Rights Reserved
                 </div>
-                
+
             </div>
             <div class="social-links text-center text-lg-right pt-3 pt-lg-0">
                 <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
@@ -156,7 +139,7 @@
         function Loading() {
             preloader.style.display = "none";
         }
-        
+
     </script>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/Vendorjs")

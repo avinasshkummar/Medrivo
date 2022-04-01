@@ -28,18 +28,13 @@
                 <div class="col-lg-8">
                     <div class="portfolio-details-slider swiper">
                         <div class="swiper-wrapper align-items-center">
-
-                            <div class="swiper-slide">
-                                <img src="@product.ImageURL" alt="">
-                            </div>
-
-                            <div class="swiper-slide">
-                                <img src="@product.ImageURL" alt="">
-                            </div>
-
-                            <div class="swiper-slide">
-                                <img src="@product.ImageURL" alt="">
-                            </div>
+                            @foreach (var item in product.ImageURL)
+                            {
+                                <div class="swiper-slide">
+                                    <img src="@item" alt="">
+                                </div>
+                            }
+                           
 
                         </div>
                         <div class="swiper-pagination"></div>
@@ -52,17 +47,16 @@
                         <ul>
                             <li><strong>Category</strong>: @product.ProductDescription</li>
                             <li><strong>Producer</strong>: Medrivo</li>
-                            <li><strong>MFD date</strong>: 01 March, 2020</li>
                         </ul>
                     </div>
                     <div class="portfolio-description">
-                        <h2>This is an example of portfolio detail</h2>
+                        <h2>@product.ProductName</h2>
                         <p>
-                            Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
+                            @product.ProductDetailDescription
                         </p>
                     </div>
                     <div class="btn-wrap">
-                        <a target="_blank" href="http://www.africau.edu/images/default/sample.pdf" download="http://www.africau.edu/images/default/sample.pdf" class="btn-buy" value="Download PDF File">Brochure <i class="fa fa-download" aria-hidden="true"></i></a>
+                        <a target="_blank" href="https://drive.google.com/file/d/1N_RAKzFYR4qUMJdjEALQiqtk12Tb2mIA/view?usp=sharing" download="https://drive.google.com/file/d/1N_RAKzFYR4qUMJdjEALQiqtk12Tb2mIA/view?usp=sharing" class="btn-buy" value="Download PDF File">Brochure <i class="fa fa-download" aria-hidden="true"></i></a>
                     </div>
             </div>
 

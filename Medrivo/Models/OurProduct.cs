@@ -9,7 +9,9 @@ namespace Medrivo.Models
     {
         public int ProductID { get; set; }
         public string ProductName { get; set; }
-        public string ImageURL { get; set; }
+        public string LogoImageURL { get; set; }
+        public List<string> ImageURL { get; set; }
         public string ProductDescription { get; set; }
+        public string ProductDetailDescription { get; set; }
     }
 }

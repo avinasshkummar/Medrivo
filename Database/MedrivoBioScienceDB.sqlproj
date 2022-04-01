@@ -61,6 +61,7 @@
     <Build Include="ProductCategory.sql" />
     <Build Include="Products.sql" />
     <Build Include="ProductImages.sql" />
+    <Build Include="ProductDescription.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Script.PostDeployment.sql" />

@@ -13,10 +13,10 @@ namespace Medrivo
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class MedrivoBioScienceEntities : DbContext
+    public partial class MedrivoBioScienceEntitiesDB : DbContext
     {
-        public MedrivoBioScienceEntities()
-            : base("name=MedrivoBioScienceEntities")
+        public MedrivoBioScienceEntitiesDB()
+            : base("name=MedrivoBioScienceEntitiesDB")
         {
         }
     
@@ -26,6 +26,7 @@ namespace Medrivo
         }
     
         public virtual DbSet<ProductCategory> ProductCategories { get; set; }
+        public virtual DbSet<ProductDescription> ProductDescriptions { get; set; }
         public virtual DbSet<ProductImage> ProductImages { get; set; }
         public virtual DbSet<Product> Products { get; set; }
     }

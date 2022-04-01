@@ -10,5 +10,6 @@
 --------------------------------------------------------------------------------------
 */
 DROP TABLE IF EXISTS [dbo].ProductImages;
+DROP TABLE IF EXISTS [dbo].ProductDescription;
 DROP TABLE IF EXISTS [dbo].Products;
 DROP TABLE IF EXISTS [dbo].ProductCategory;

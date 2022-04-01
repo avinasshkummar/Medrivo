@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="MedrivoBioScienceModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="MedrivoBioScienceModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ProductCategory">
           <Key>
             <PropertyRef Name="Id" />
@@ -13,12 +13,21 @@
           <Property Name="Name" Type="varchar" MaxLength="200" />
           <Property Name="Description" Type="varchar" MaxLength="1000" />
         </EntityType>
+        <EntityType Name="ProductDescription">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Description" Type="varchar(max)" />
+          <Property Name="ProductID" Type="int" />
+        </EntityType>
         <EntityType Name="ProductImages">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="ProductImagePath" Type="varchar" MaxLength="200" />
+          <Property Name="IsLogo" Type="bit" />
           <Property Name="ProductID" Type="int" />
         </EntityType>
         <EntityType Name="Products">
@@ -42,6 +51,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_ProductDescriptionID">
+          <End Role="Products" Type="Self.Products" Multiplicity="0..1" />
+          <End Role="ProductDescription" Type="Self.ProductDescription" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProductDescription">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_ProductID">
           <End Role="Products" Type="Self.Products" Multiplicity="0..1" />
           <End Role="ProductImages" Type="Self.ProductImages" Multiplicity="*" />
@@ -56,19 +77,23 @@
         </Association>
         <EntityContainer Name="MedrivoBioScienceModelStoreContainer">
           <EntitySet Name="ProductCategory" EntityType="Self.ProductCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductDescription" EntityType="Self.ProductDescription" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ProductImages" EntityType="Self.ProductImages" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_ProductCategoryID" Association="Self.FK_ProductCategoryID">
             <End Role="ProductCategory" EntitySet="ProductCategory" />
             <End Role="Products" EntitySet="Products" />
           </AssociationSet>
+          <AssociationSet Name="FK_ProductDescriptionID" Association="Self.FK_ProductDescriptionID">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="ProductDescription" EntitySet="ProductDescription" />
+          </AssociationSet>
           <AssociationSet Name="FK_ProductID" Association="Self.FK_ProductID">
             <End Role="Products" EntitySet="Products" />
             <End Role="ProductImages" EntitySet="ProductImages" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="MedrivoBioScienceModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -81,6 +106,15 @@
           <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Products" Relationship="Self.FK_ProductCategoryID" FromRole="ProductCategory" ToRole="Products" />
         </EntityType>
+        <EntityType Name="ProductDescription">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ProductID" Type="Int32" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_ProductDescriptionID" FromRole="ProductDescription" ToRole="Products" />
+        </EntityType>
         <EntityType Name="ProductImage">
           <Key>
             <PropertyRef Name="Id" />
@@ -89,6 +123,7 @@
           <Property Name="ProductImagePath" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="ProductID" Type="Int32" />
           <NavigationProperty Name="Product" Relationship="Self.FK_ProductID" FromRole="ProductImages" ToRole="Products" />
+          <Property Name="IsLogo" Type="Boolean" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -99,6 +134,7 @@
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="ProductTypeID" Type="Int32" />
           <NavigationProperty Name="ProductCategory" Relationship="Self.FK_ProductCategoryID" FromRole="Products" ToRole="ProductCategory" />
+          <NavigationProperty Name="ProductDescriptions" Relationship="Self.FK_ProductDescriptionID" FromRole="Products" ToRole="ProductDescription" />
           <NavigationProperty Name="ProductImages" Relationship="Self.FK_ProductID" FromRole="Products" ToRole="ProductImages" />
         </EntityType>
         <Association Name="FK_ProductCategoryID">
@@ -110,6 +146,18 @@
             </Principal>
             <Dependent Role="Products">
               <PropertyRef Name="ProductTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductDescriptionID">
+          <End Role="Products" Type="Self.Product" Multiplicity="0..1" />
+          <End Role="ProductDescription" Type="Self.ProductDescription" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProductDescription">
+              <PropertyRef Name="ProductID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -125,13 +173,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="MedrivoBioScienceEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="MedrivoBioScienceEntitiesDB" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="ProductCategories" EntityType="Self.ProductCategory" />
+          <EntitySet Name="ProductDescriptions" EntityType="Self.ProductDescription" />
           <EntitySet Name="ProductImages" EntityType="Self.ProductImage" />
           <EntitySet Name="Products" EntityType="Self.Product" />
           <AssociationSet Name="FK_ProductCategoryID" Association="Self.FK_ProductCategoryID">
             <End Role="ProductCategory" EntitySet="ProductCategories" />
             <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductDescriptionID" Association="Self.FK_ProductDescriptionID">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="ProductDescription" EntitySet="ProductDescriptions" />
           </AssociationSet>
           <AssociationSet Name="FK_ProductID" Association="Self.FK_ProductID">
             <End Role="Products" EntitySet="Products" />
@@ -143,7 +196,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="MedrivoBioScienceModelStoreContainer" CdmEntityContainer="MedrivoBioScienceEntities">
+        <EntityContainerMapping StorageEntityContainer="MedrivoBioScienceModelStoreContainer" CdmEntityContainer="MedrivoBioScienceEntitiesDB">
           <EntitySetMapping Name="ProductCategories">
             <EntityTypeMapping TypeName="MedrivoBioScienceModel.ProductCategory">
               <MappingFragment StoreEntitySet="ProductCategory">
@@ -153,9 +206,19 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="ProductDescriptions">
+            <EntityTypeMapping TypeName="MedrivoBioScienceModel.ProductDescription">
+              <MappingFragment StoreEntitySet="ProductDescription">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="ProductImages">
             <EntityTypeMapping TypeName="MedrivoBioScienceModel.ProductImage">
               <MappingFragment StoreEntitySet="ProductImages">
+                <ScalarProperty Name="IsLogo" ColumnName="IsLogo" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="ProductImagePath" ColumnName="ProductImagePath" />
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />

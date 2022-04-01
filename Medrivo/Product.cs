@@ -17,6 +17,7 @@ namespace Medrivo
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Product()
         {
+            this.ProductDescriptions = new HashSet<ProductDescription>();
             this.ProductImages = new HashSet<ProductImage>();
         }
     
@@ -26,6 +27,8 @@ namespace Medrivo
         public Nullable<int> ProductTypeID { get; set; }
     
         public virtual ProductCategory ProductCategory { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ProductDescription> ProductDescriptions { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProductImage> ProductImages { get; set; }
     }

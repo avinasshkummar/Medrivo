@@ -9,7 +9,16 @@
                SELECT * FROM [$(TableName)]					
 --------------------------------------------------------------------------------------
 */
-DROP TABLE IF EXISTS [dbo].ProductImages;
-DROP TABLE IF EXISTS [dbo].ProductDescription;
-DROP TABLE IF EXISTS [dbo].Products;
-DROP TABLE IF EXISTS [dbo].ProductCategory;
+IF EXISTS(SELECT *
+          FROM   [dbo].ProductImages)
+  DROP TABLE [dbo].ProductImages;
+IF EXISTS(SELECT *
+          FROM   [dbo].ProductDescription)
+  DROP TABLE [dbo].ProductDescription;
+IF EXISTS(SELECT *
+          FROM   [dbo].Products)
+  DROP TABLE [dbo].Products;
+IF EXISTS(SELECT *
+          FROM   [dbo].ProductCategory)
+  DROP TABLE [dbo].ProductCategory;
+

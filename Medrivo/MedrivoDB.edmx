@@ -27,7 +27,7 @@
           </Key>
           <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="ProductImagePath" Type="varchar" MaxLength="200" />
-          <Property Name="IsLogo" Type="bit" />
+          <Property Name="IsLogo" Type="int" />
           <Property Name="ProductID" Type="int" />
         </EntityType>
         <EntityType Name="Products">
@@ -123,7 +123,7 @@
           <Property Name="ProductImagePath" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="ProductID" Type="Int32" />
           <NavigationProperty Name="Product" Relationship="Self.FK_ProductID" FromRole="ProductImages" ToRole="Products" />
-          <Property Name="IsLogo" Type="Boolean" />
+          <Property Name="IsLogo" Type="Int32" />
         </EntityType>
         <EntityType Name="Product">
           <Key>

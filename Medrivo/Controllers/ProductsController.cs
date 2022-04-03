@@ -15,9 +15,9 @@ namespace Medrivo.Controllers
             var products = new List<Products>();
             using (var db = new MedrivoBioScienceEntitiesDB())
             {
+                
 
-
-                var dbProducts = db.ProductCategories.GroupJoin((db.Products.Join(db.ProductImages.Where(x=>x.IsLogo), p => p.Id, purl => purl.ProductID,
+                var dbProducts = db.ProductCategories.GroupJoin((db.Products.Join(db.ProductImages.Where(x=>x.IsLogo==1), p => p.Id, purl => purl.ProductID,
                     (p, purl) => new { p.Id, ProductName = p.Name, purl.ProductImagePath, p.ProductTypeID, ProductDescription = p.Description })), p => p.Id, pc => pc.ProductTypeID,
                     (p, pc) => new { ProductCategory = p.Name, ProductCategoryDescription = p.Description, pc });
                 foreach (var item in dbProducts)
@@ -51,15 +51,17 @@ namespace Medrivo.Controllers
             var productID= Int32.Parse(Request.Url.Segments[3]);
             using (var db = new MedrivoBioScienceEntitiesDB())
             {
+                var type = new List<int> { 1, 2 };
                 var prodswithdesc = db.Products.Join(db.ProductDescriptions, p => p.Id, pd => pd.ProductID, (p, pd) => new { p.Id,p.Name, p.ProductTypeID,p.ProductCategory ,detailed =pd.Description });
 
-                var toreturn = prodswithdesc.GroupJoin(db.ProductImages, p => p.Id, purl => purl.ProductID,
+                var toreturn = prodswithdesc.GroupJoin(db.ProductImages.Where(x => type.Contains( x.IsLogo)), p => p.Id, purl => purl.ProductID,
                     (x, y) => new { x.Id, ProductName = x.Name, prodtypeid=x.ProductTypeID, category=x.ProductCategory, detailed=x.detailed, images=y.ToList() }).Where(p=>p.Id== productID).FirstOrDefault();
                 productDeatil = new OurProduct() {ProductID= toreturn.Id, 
                     ImageURL = toreturn.images.Select(x=>x.ProductImagePath).ToList(), 
                     ProductDescription = db.ProductCategories.Where(x=>x.Id==toreturn.prodtypeid).Select(x=>x.Name).FirstOrDefault(), 
                     ProductName = toreturn.ProductName,
                     ProductDetailDescription= toreturn.detailed};
+                productDeatil.ProductBroschure = db.ProductImages.Where(x => productID == (int)(x.ProductID) && (int)(x.IsLogo) == 0).Select(x => x.ProductImagePath).FirstOrDefault();
             }
             ViewBag.ProductDetail = productDeatil;
 

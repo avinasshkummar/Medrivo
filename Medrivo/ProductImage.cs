@@ -17,7 +17,7 @@ namespace Medrivo
         public int Id { get; set; }
         public string ProductImagePath { get; set; }
         public Nullable<int> ProductID { get; set; }
-        public bool IsLogo { get; set; }
+        public int IsLogo { get; set; }
     
         public virtual Product Product { get; set; }
     }

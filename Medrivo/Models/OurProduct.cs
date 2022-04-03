@@ -13,5 +13,6 @@ namespace Medrivo.Models
         public List<string> ImageURL { get; set; }
         public string ProductDescription { get; set; }
         public string ProductDetailDescription { get; set; }
+        public string ProductBroschure { get; set; }
     }
 }

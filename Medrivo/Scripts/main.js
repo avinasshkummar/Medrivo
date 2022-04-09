@@ -304,7 +304,7 @@
         speed: 1000,
         parallax: true,
         autoplay: {
-            delay: 6000,
+            delay: 3000,
             disableOnInteraction: false,
         },
         watchSlidesProgress: true,
